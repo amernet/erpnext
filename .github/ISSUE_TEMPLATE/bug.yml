@@ -1,0 +1,65 @@
+name: "Bug card"
+description: "A defect in ERP. A clean repro can go straight to Ready; without one it goes to Triage."
+title: "🐛 [bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The repro **is** the acceptance criteria. A bug without a clean repro is not ready —
+        it goes to Triage until someone can reproduce it from a clean state.
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      description: Numbered, from a clean state.
+      value: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+  - type: textarea
+    id: expected-actual
+    attributes:
+      label: Expected vs actual
+      placeholder: |
+        Expected: ...
+        Actual: ...
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Where it happens — prod / staging / site / ERPNext + Frappe version / browser.
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: A triager applies the matching severity label.
+      options:
+        - "high — broken for users / data at risk"
+        - "medium — degraded, has a workaround"
+        - "low — cosmetic / rare"
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: What "fixed" looks like, observable. Defaults to the repro no longer reproducing plus a regression test.
+      value: |
+        - [ ] The repro above no longer reproduces
+        - [ ] A regression test covers it
+    validations:
+      required: true
+  - type: textarea
+    id: area
+    attributes:
+      label: Affected area
+      description: Module / doctype / file hints, if known.
+    validations:
+      required: false

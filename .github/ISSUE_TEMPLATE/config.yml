@@ -3,3 +3,9 @@ contact_links:
   - name: Community Forum
     url: https://discuss.frappe.io/c/erpnext/6
     about: For general QnA, discussions and community help.
+  - name: The card contract (what makes a card Ready)
+    url: https://ddd.hermesnetwork.cloud/s/superai/p/6efoWk1NUH
+    about: Every card must satisfy this contract before it reaches the Ready column.
+  - name: The AI agent coding loop
+    url: https://ddd.hermesnetwork.cloud/s/superai/p/xsdPVMWhXA
+    about: How intake (business, users, devs) becomes shipped code on one board.
