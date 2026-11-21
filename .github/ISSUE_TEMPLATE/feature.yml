@@ -1,0 +1,92 @@
+name: "Feature / enhancement (DDD spec → work item)"
+description: "Hand an approved Docmost spec to the ERP board. Must satisfy the card contract."
+title: "✨ [enhancement] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Design Driven Developing: this card is the hand-off **after** the spec is drafted,
+        diagrammed, and signed off in Docmost. The spec stays the source of truth; this card
+        is its executable summary.
+
+        A card is ready when a competent stranger — human or agent — could build it, and QA
+        could verify it, using only what's on this card. If you can't fill the required
+        fields, it isn't ready: park it in Triage, not Ready.
+  - type: input
+    id: spec
+    attributes:
+      label: Docmost spec
+      description: Link the approved, signed-off Docmost page. This is the source of truth.
+      placeholder: https://ddd.hermesnetwork.cloud/s/general/p/...
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem / goal
+      description: One or two sentences — what outcome, for whom, why now.
+    validations:
+      required: true
+  - type: input
+    id: user-facing
+    attributes:
+      label: User-facing change
+      description: One line on what the user sees differently.
+    validations:
+      required: true
+  - type: textarea
+    id: in-scope
+    attributes:
+      label: In scope
+      value: |
+        -
+    validations:
+      required: true
+  - type: textarea
+    id: out-of-scope
+    attributes:
+      label: Out of scope (explicitly)
+      description: What this card deliberately does not do — stops the change from ballooning.
+      value: |
+        -
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Observable, testable outcomes — not implementation steps. Include at least one test.
+      value: |
+        - [ ]
+        - [ ]
+        - [ ] A test covers the above
+    validations:
+      required: true
+  - type: textarea
+    id: decisions
+    attributes:
+      label: Key decisions (from sign-off)
+      description: Decisions the domain experts agreed to. Link the diagram if there is one.
+    validations:
+      required: false
+  - type: textarea
+    id: area
+    attributes:
+      label: Affected area / notes for the builder
+      description: Files / modules / doctypes likely touched, constraints, non-goals.
+    validations:
+      required: false
+  - type: input
+    id: blocked-by
+    attributes:
+      label: Blocked by
+      description: Card links, or "none".
+      value: "none"
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        Ready = spec signed off + all required fields filled. Then move the card to **Ready** on the ERP project board.
